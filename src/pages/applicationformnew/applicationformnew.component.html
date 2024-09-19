@@ -1,0 +1,317 @@
+<div
+  class="table-responsive mt-5 studenttable p-2"
+>
+<h5 class="bg-primary text-white text-center p-2">
+  मध्य प्रदेश मदरसा बोर्ड , भोपाल
+</h5>
+  <table [formGroup]="studentform"
+    class="table table-bordered justify-content-center align-middle "
+  > 
+    <thead class="table-light">
+      
+        <!-- <tr>
+    
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr> -->
+</thead>
+<tbody class="table-group-divider ">
+
+
+
+<tr
+    class="table-bordered fw-bold "
+  >
+  
+    <td  class="fs-5" [colSpan]="6">व्यक्तिगत विवरण </td>
+
+    <td class="text-danger" [colSpan]="2"><span class="text-danger">*</span> चिन्ह अंकित अनिवार्य है</td>
+   
+  </tr>
+  <tr
+    class="table-bordered"
+  >
+  
+    <td [colSpan]="2">वर्ष (सत्र)</td>
+
+    <td [colSpan]="6">{{getCurrentYear()}}{{getCurrentSession()}}</td>
+   
+  </tr>
+  <tr
+    class="table-bordered"
+  >
+  <td [colSpan]="2">विघार्थी का नाम अंग्रेज़ी मे <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input formControlName="studentEname" class="form-control" type="text" >
+    <!-- <div class="text-danger">
+      @if( studentform.controls['studentEname'].touched && studentform.controls['studentEname'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+  
+  </td>
+  
+ 
+  
+  
+  <td [colSpan]="2">विघार्थी का नाम हिन्दी मे <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input  formControlName="studentHname" class="form-control" type="text" >
+  
+    <!-- <div class="text-danger">
+      @if( studentform.controls['studentHname'].touched && studentform.controls['studentHname'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+  
+  </td>
+
+  </tr>
+
+  <tr
+    class="table-bordered"
+  >
+  <td [colSpan]="2">पिता/पति का नाम अंग्रेज़ी मे <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input class="form-control" formControlName="fatherEname"  type="text">
+    <!-- <div class="text-danger">
+      @if( studentform.controls['fatherEname'].touched && studentform.controls['fatherEname'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+      </td>
+  <td [colSpan]="2">पिता/पति का नाम हिन्दी मे <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input class="form-control" formControlName="fatherHEname" type="text">
+    <!-- <div class="text-danger">
+      @if( studentform.controls['fatherHEname'].touched && studentform.controls['fatherHEname'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+  </td>
+  </tr>
+  
+  <tr
+    class="table-bordered"
+  >
+  <td [colSpan]="2">माता का नाम अंग्रेज़ी मे <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input class="form-control" formControlName="motherEname" type="text">
+    <!-- <div class="text-danger">
+    @if( studentform.controls['motherEname'].touched && studentform.controls['motherEname'].errors?.['required']){
+        <span> Name is required </span> }
+      </div> -->
+    
+    </td>
+  <td [colSpan]="2">माता का नाम अंग्रेज़ी मे <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input class="form-control" formControlName="motherHname" type="text">
+    <!-- <div class="text-danger">
+      @if( studentform.controls['motherHname'].touched && studentform.controls['motherHname'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+      
+      </td>
+  </tr>
+
+  <tr
+    class="table-bordered"
+  >
+  <td [colSpan]="2">जाति <span class="text-danger">*</span>
+    </td>
+  <td [colSpan]="2"> <select formControlName="caste" id="caste" class="form-select">
+    <option *ngFor="let option of casteOptions" [value]="option.value">
+      {{ option.label }}
+    </option>
+  </select>
+
+  <!-- <div class="text-danger">
+    @if( studentform.controls['caste'].touched && studentform.controls['caste'].errors?.['required']){
+        <span> Name is required </span> }
+      </div> -->
+    </td>
+  
+  <td [colSpan]="2">लिंग <span class="text-danger">*</span>
+    
+      </td>
+  <td [colSpan]="1"><input class="form-check-input border-dark " formControlName="gender"  value="male" id="male" type="radio">male
+    <!-- <div class="text-danger">
+    @if( studentform.controls['gender'].touched && studentform.controls['gender'].errors?.['required']){
+      <span> Name is required </span> }
+    </div> -->
+  
+  
+  </td>
+  <td [colSpan]="1"><input class="form-check-input border-dark " formControlName="gender"  value="Female" id="Female" type="radio">Female</td>
+  </tr>
+
+  <tr
+    class="table-bordered"
+  >
+  <td [colSpan]="2">जन्मतिथि दिनांक <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input class="form-control" formControlName="dob"  type="date" >
+    <!-- <div class="text-danger">
+      @if( studentform.controls['dob'].touched && studentform.controls['dob'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+      
+      
+      
+      </td>
+  
+  <td [colSpan]="2">शब्दो में</td>
+  <td [colSpan]="2"><input class="form-control" disable="true" type="text" formControlName="dobwords"></td>
+  
+  </tr>
+
+  <tr
+    class="table-bordered"
+  >
+  <td [colSpan]="2">मोबाइल नंबर <span class="text-danger">*</span>
+    </td>
+  <td [colSpan]="2"><input class="form-control" formControlName="mobile" type="text">
+    <!-- <div class="text-danger">
+      @if( studentform.controls['mobile'].touched && studentform.controls['mobile'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+      
+      </td>
+  <td [colSpan]="2">अधिवास <span class="text-danger">*</span>
+    <!-- <div class="text-danger">
+      @if( studentform.controls['adhivash'].touched && studentform.controls['adhivash'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+      
+      </td>
+  <td [colSpan]="1"><input class="form-check-input border-dark" formControlName="adhivash" value="mp" type="radio">mp</td>
+  <td [colSpan]="1"><input class="form-check-input border-dark" formControlName="adhivash" value="otr" type="radio">others</td>
+  </tr>
+
+  <tr class="table-bordered fw-bold">
+    <td class="fs-5" [colSpan]="8">पता </td>
+    
+</tr>
+
+<tr
+    class="table-bordered"
+  >
+  <td [colSpan]="2">वर्तमान पता <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input class="form-control" formControlName="presentAddress" type="text">
+    <!-- <div class="text-danger">
+      @if( studentform.controls['presentAddress'].touched && studentform.controls['presentAddress'].errors?.['required']){
+          <span> Name is required </span> }
+        </div>
+       -->
+      </td>
+  <td [colSpan]="2">पिन कोड नंबर <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input class="form-control" formControlName="presentpincode" type="text">
+    <!-- <div class="text-danger">
+      @if( studentform.controls['presentpincode'].touched && studentform.controls['presentpincode'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+      
+      
+      </td>
+  </tr>
+
+  <tr
+    class="table-bordered"
+  >
+  <td [colSpan]="8"><input class="form-check-input-lg bg-primary" type="checkbox">  वर्तमान पता स्थायी पता एक ही हैं</td>
+  
+  </tr>
+  <tr
+    class="table-bordered"
+  >
+  <td [colSpan]="2">स्थायी पता <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input class="form-control" formControlName="permanentAddress" type="text">
+    <!-- <div class="text-danger">
+      @if( studentform.controls['permanentAddress'].touched && studentform.controls['permanentAddress'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+      
+      
+      </td>
+  <td [colSpan]="2">पिन कोड नंबर <span class="text-danger">*</span></td>
+  <td [colSpan]="2"><input class="form-control" formControlName="permanentpincode" type="text">
+    <!-- <div class="text-danger">
+      @if( studentform.controls['permanentpincode'].touched && studentform.controls['permanentpincode'].errors?.['required']){
+          <span> Name is required </span> }
+        </div> -->
+      
+      </td>
+  </tr>
+
+  
+<tr class="table-bordered fw-bold">
+  <td class="fs-5" [colSpan]="8">अध्ययन केंद्र  </td>
+
+</tr>
+<tr class="table-bordered">
+  <td [colSpan]="2">standard <span class="text-danger">*</span></td>
+  <td [colSpan]="3"><input class="form-check-input border-dark " formControlName="standard" (click)="onchangestandard()" value="HS"  id="male" type="radio">hs</td>
+  <td [colSpan]="3"><input class="form-check-input border-dark " formControlName="standard"  value="HSS" id="Female" type="radio">hss</td>
+</tr>
+
+<tr class="table-bordered"
+*ngIf="studentform.get('standard')?.value ==='HSS'"
+>
+<td [colSpan]="2">संकाय<span class="text-danger">*</span></td>
+<td [colSpan]="2"><select formControlName="stream" id="StreamID" class="form-select my-dropdown">
+<option value="" disabled selected>Select Stream</option>
+<option *ngFor="let option of StreamDDL" [value]="option.value">
+  {{ option.label }}
+</option>
+</select>
+</td>
+</tr>
+
+
+
+<tr
+  class="table-bordered"
+>
+<td [colSpan]="2">अध्ययन केंद्र जिला <span class="text-danger">*</span></td>
+<td [colSpan]="2"><select formControlName="studycenterzila" id="studycenterzilaID" class="form-select my-dropdown">
+  <option value="" disabled selected>Select Zila</option>
+  <option *ngFor="let option of studycenterZilaDDL" [value]="option.value">
+    {{ option.label }}
+  </option>
+</select>
+
+<!-- <div class="text-danger">
+  @if( studentform.controls['studycenterzila'].touched && studentform.controls['studycenterzila'].errors?.['required']){
+      <span> Name is required </span> }
+    </div> -->
+</td>
+<td [colSpan]="2">अध्ययन केंद्र <span class="text-danger">*</span></td>
+<td [colSpan]="2"><select formControlName="studycenter" id="studycenterID" class="form-select my-dropdown">
+  <option value="" disabled selected>Select study center</option>
+  <option *ngFor="let option of studycenterDDL" [value]="option.value">
+    {{ option.label }}
+  </option>
+</select>
+
+<!-- <div class="text-danger">
+@if( studentform.controls['studycenter'].touched && studentform.controls['studycenter'].errors?.['required']){
+    <span> Name is required </span> }
+  </div> -->
+</td>
+</tr>
+
+<tr
+  class="table-bordered"
+>
+<td [colSpan]="8" class="text-center "><button class="btn btn-lg btn-primary" (click)="onSubmit()" type="button">please Submit</button></td>
+
+</tr>
+
+
+  
+  </tbody>
+    <tfoot>
+      
+    </tfoot>
+  </table>
+</div>
+<!-- <router-outlet></router-outlet> -->
+
+
+
+

@@ -1,0 +1,62 @@
+<h2>G2G Login</h2>
+
+<section class="p-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card border border-light-subtle rounded-4">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-4">
+                                    <div class="text-center mb-3">
+                                        <!-- <a href="#!">
+                                            <img src="../../../assets/images/LOGOG2G.jpg" alt="BootstrapBrain Logo" width="180" height="70">
+                                        </a> -->
+                                    </div>
+                                    <h4 class="text-center">Welcome G2G Login</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <form [formGroup]="loginForm">
+                            <div class="form-floating mb-4">
+                              <input formControlName="username" type="username" class="form-control" placeholder="username" required>
+                              <label for="username">User Id</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                              <input formControlName="password" type="password" class="form-control" placeholder="Password" required>
+                              <label for="password">Password</label>
+                            </div>
+                            <div class="row mb-2">
+                              <div class="col-md-4">
+                                <div class="captcha-display">{{ generatedCaptcha }}</div>
+                              </div>
+                              <div class="col-md-4 text-center">
+                                <button  class="btn btn-primary"(click)="REgenerateCaptcha()">
+                                    <i class="fas fa-sync-alt"></i> 
+                                </button>
+                              </div>
+                              <div class="col-md-4">
+                                <input formControlName="captcha" type="text" class="form-control" placeholder="Enter CAPTCHA" required>
+                           
+                              </div>
+                            </div>
+                            <div class="d-grid mt-4">
+                              <button type="button" (click)="onsubmit(loginForm.value.username, loginForm.value.password, loginForm.value.captcha)"  class="btn bsb-btn-xl btn-primary">Log in now</button>
+                            </div>
+                          </form>
+                        <div class="row">
+                            <div class="col-12">
+                                <hr class="mt-4 mb-3 border-secondary-subtle">
+                                <div class="d-flex gap-2 flex-column flex-md-row justify-content-md-end">
+                                   
+                                    <a href="#!" class="link-primary text-decoration-none">Forgot password ?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

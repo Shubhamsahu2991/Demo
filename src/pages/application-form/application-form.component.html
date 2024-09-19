@@ -1,0 +1,307 @@
+
+<!-- <p>Internet Connection Status: {{ networkStatus ? 'IS CONNECTED' : 'NOT CONNECTED' }}</p>
+ -->
+<!-- 
+<div class="d-flex justify-content-center" *ngIf="showCardGroup" >
+    <div class="card-group p-1">
+      <div class="card p-1">
+        <div class="card-body d-flex justify-content-center align-items-center">
+          <button class="btn fw-bold btn-secondary btn-lg shadow-lg rounded" (click)="togglePopup('new')">new</button>
+        </div>
+      </div>
+      <div class="card p-1">
+        <div class="card-body d-flex justify-content-center align-items-center">
+          <button class="btn fw-bold btn-secondary btn-lg shadow-lg rounded" (click)="togglePopup('old')">old</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+<div  *ngIf="new"   class="container-wrapper"> -->
+    
+    <div class="container1 p-4 " style="flex: 7;">
+    
+    <div class="p-5 container">
+        <form >
+            <div class="row">
+                <h2 class="text-center mb-5">Madarsa Registration Application Form</h2>
+               
+                <label for="fullname" class="badge p-3 mb-4 bg-secondary">personal Information</label>
+                <div class="col-md-4 mb-3">
+                    <label for="fullname">Name</label>
+                    <input type="text" name="fullname" (input)="validateAlphabeticInput($event)"  class="form-control" id="fullname" placeholder="">
+                </div>
+               
+                <div class="col-md-4 mb-3">
+                    <label for="fullname">Hindi name</label>
+                    <input type="text" name="fullname"  class="form-control" (input)="validateHindiInput($event)" id="fullname" placeholder="">
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="fullname">Father name</label>
+                    <input type="text" name="fullname" (input)="validateAlphabeticInput($event)"   class="form-control" id="fullname" placeholder="">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="inputEmail1">Father Hindi name</label>
+                    <input type="email" name="email"  class="form-control" id="inputEmail1" placeholder="">
+                </div>
+            </div>
+                <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="phonenumber">Mother Name</label>
+                    <input type="text" name="phone" (input)="validateAlphabeticInput($event)"  class="form-control" id="phonenumber" placeholder="">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="inputAddress">Mother hindi Name</label>
+                    <input type="text" name="address"  class="form-control" id="inputAddress" placeholder="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="Caste" class="form-label">Caste</label>
+                    
+                    <select name="caste" class="form-select" id="caste">
+                        <option value="">Select caste</option>
+                        <option value="GEN">GEN</option>
+                        <option value="OBC">OBC</option>
+                        <option value="SC">SC</option>
+                        <option value="ST">ST</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="gender">Gender</label>
+                    <br/>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="Male">
+                      <label class="form-check-label" for="Male" value="M">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="Female" checked>
+                      <label class="form-check-label" for="Female" value="F">Female</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="Dob">Date of Birth</label>
+                    <input type="date" name="dob" class="form-control" id="Dob" >
+                
+                    
+                  </div>
+                  
+                  
+                  
+        </div>
+        
+<!-- address Start-->    
+              
+     <!-- Present Address -->
+            <div class="row">
+                <label for="Address" class="badge p-3 mb-4 mt-3 bg-secondary">Address</label>
+
+                <div class="col-md-12 mb-3">
+                  <label for="inputstate">Present Address</label>
+                  <input type="text" name="state" class="form-control" id="inputstate">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="inputZipcode">Pin code</label>
+                  <input type="text" name="zipCode" class="form-control" id="inputZipcode">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="District" class="form-label">District</label>
+                    <select name="District" class="form-select" id="District">
+                        <option value="">Select caste</option>
+                        <option value="bhopal">bhopal</option>
+                        <option value="bersia">bersia</option>
+                        <option value="vidisha">vidisha</option>
+                        <option value="rajgarh">rajgarh</option>
+                    </select>
+                </div>
+            </div>
+             <!-- Parmanent Address -->
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (change)="copyAddress()">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Present address same as permanent address
+                    </label>
+                  </div>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                  <label for="inputstate">Permanent Address</label>
+                  <input type="text" name="state" class="form-control" id="permanentInputstate">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="inputZipcode">Pin code</label>
+                  <input type="text" name="zipCode" class="form-control" id="permanentInputZipcode">
+                </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="permanentDistrict" class="form-label">District</label>    
+                <select name="permanentDistrict" class="form-select" id="permanentDistrict">
+                    <option value="">Select caste</option>
+                    <option value="bhopal">bhopal</option>
+                    <option value="bersia">bersia</option>
+                    <option value="vidisha">vidisha</option>
+                    <option value="rajgarh">rajgarh</option>
+                </select>
+              
+            </div>
+         
+    </div>
+<!-- address end-->
+
+<!-- ACEDEMIC marks  start-->
+    <div class="row">
+        <label for="MARKS" class="badge p-3 mb-4 mt-3 bg-secondary">ACEDEMIC MARKS</label>
+
+
+        <form [formGroup]="form" >
+            <div formArrayName="subjects" *ngFor="let subject of subjects.controls; let i = index">
+            <div [formGroupName]="i">
+                
+            <label for="subject">Subject:</label>
+            <select style="width: 100px;" formControlName="subject" (change)="onSubjectChange(i)">
+            <option *ngFor="let subject of availableSubjects" [value]="subject">{{ subject }}</option>
+            </select>
+            
+            <label for="marks">Marks:</label>
+            <input style="width: 100px;"  type="number" formControlName="marks" />
+            
+            <label for="practicalMarks">Practical Marks:</label>
+            <input style="width: 100px;" type="number" formControlName="practicalMarks" />
+            
+            <label for="totalMarks">Total Marks:</label>
+            <input style="width: 100px;" type="number" [value]="getTotalMarks(i)" readonly />
+
+            
+            <label for="subject">Subject:</label>
+                <select style="width: 100px;" formControlName="subject1" (change)="onSubjectChange(i)">
+                <option *ngFor="let subject of appiaringsubject" [value]="subject">{{ subject }}</option>
+                </select>
+            </div>
+            
+                
+            </div>
+            
+            <button class="btn btn-primary" (click)="addSubject()" [disabled]="subjects.length >= 5">Add Subject</button>
+        
+            </form>
+        
+
+       
+    </div>
+    <!-- ACEDEMIC marks  end-->
+
+
+        </form>
+    </div>
+    </div>
+<!-- </div> -->
+
+
+
+
+
+
+<div  *ngIf="old" class="container-wrapper w-100">
+    <div class="container1 p-5 " style="flex: 5;">
+    
+    <div class="p-5 container">
+        <form>
+            <div class="row">
+                <h2 class="text-center mb-5">old Madarsa Registration Application Form</h2>
+               
+                <label for="Application" class="badge p-3 mb-4 bg-secondary">Previous Information</label>
+                <div class="col-md-4 mb-3">
+                    <label for="Application">Application no</label>
+                    <input type="text" name="Application"  class="form-control" id="Application" placeholder="">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="inputyear">Year</label>
+                    <input type="text" name="inputyear" class="form-control" id="inputyear" placeholder="">
+                </div>
+            </div>
+        
+            
+            
+            <button type="submit"  class="btn btn-primary submit">Submit</button>
+        </form>
+    </div>
+</div>
+</div>
+<!-- 
+<div class="container2 p-2 m-3" style="flex: 3; border: 2px black;">
+    <h2 class="text-center">Record</h2>
+    <div class="p-5">
+        <form>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="inputBankname">Bank name</label>
+                    <input type="text" name="bankName[]"  class="form-control" id="inputBankname">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="inputLoanAmount">Loan Amount:</label>
+                    <input type="number" name="loanAmount[]"  class="form-control" id="inputLoanAmount">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="inputEmi">Emi:</label>
+                    <input type="number" name="emi[]"  class="form-control" id="inputEmi">
+                </div>
+            </div>
+            <button type="button"  class="btn btn-primary">Add Another Loan</button>
+        </form>
+
+        <table class="table table-bordered mt-3 ">
+            <thead class="table-bordered" >
+                <tr >
+                    <td>S.No</td>
+                    <td>Bank</td>
+                    <td>Loan Amount</td>
+                    <td>EMI</td>
+                </tr>
+            </thead> -->
+            <!-- @if (application.Loans.length === 0) {
+                <tbody>
+                    <tr>
+                        <td class="text-center" colspan="4">No Loans Added Yet</td>                        
+                    </tr>    
+                </tbody>
+            } @else {
+                <tbody>
+                    @for (item of application.Loans; track $index) {
+                    <tr>
+                        <td>{{$index + 1}}</td>
+                        <td>{{item.bankName}}</td>
+                        <td>{{item.loanAmount}}</td>
+                        <td> {{item.emi}}</td>
+                    </tr>
+                }
+                </tbody>
+
+
+            } -->
+            
+        <!-- </table>
+    </div>
+</div> -->
+
+
+<!-- 
+<div class="container-wrapper">
+    <div class="container1" style="flex: 7;">
+    
+    </div>
+    <div class="container2" style="flex: 3;">
+     
+    </div>
+  </div> -->

@@ -1,0 +1,22 @@
+.studenttable{
+  background-color: rgb(255, 255, 255);
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  font-size: small ;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 1%;
+}
+input{
+  border: 1px solid rgb(205, 205, 205);
+
+}
+td{
+  border: 1px solid rgb(205, 205, 205);
+  background-color: rgb(241, 235, 235);
+}
+.my-dropdown {
+  width:200px; /* Set the desired fixed height */
+  /* Add any other styling you want (e.g., font size, colors, etc.) */
+}
